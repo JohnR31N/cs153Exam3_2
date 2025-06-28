@@ -56,9 +56,10 @@ app.get('/', (req, res) => {
     </html>
   `;
   res.send(html);
+
 });
 
-// POST 后查询食材
+
 app.post('/meals', async (req, res) => {
   const ingredient = req.body.ingredient || 'chicken_breast';
   const url = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
@@ -129,5 +130,5 @@ app.post('/meals', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(` Server running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
